@@ -80,3 +80,12 @@ repos:
     always_run: true
     stages: [pre-commit]
     additional_dependencies: [GitPython]
+  - id: unittest-src13
+    name: unittest-src13
+    entry: python -m pytest
+    language: python
+    args: [./tests]
+    pass_filenames: false
+    always_run: true
+    additional_dependencies: [pytest]
+    stages: [pre-push]
