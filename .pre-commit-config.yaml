@@ -48,3 +48,8 @@ repos:
     args: [./tests, --verbose, --fail-under=100, --ignore-module, --ignore-init-method]
     stages: [pre-commit, pre-push]
     always_run: true
+- repo: https://github.com/PyCQA/isort
+  rev: 5.12.0
+  hooks:
+  - id: isort
+    args: ["--profile", "ruff", "--line-length=79"]
