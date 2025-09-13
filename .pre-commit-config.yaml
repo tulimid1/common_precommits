@@ -89,3 +89,13 @@ repos:
     always_run: true
     additional_dependencies: [pytest]
     stages: [pre-push]
+  # - id: unittest-srcX
+  #   name: unittest-srcX
+  #   entry: python -m pytest
+  #   language: python
+  #   language_version: pythonX
+  #   args: [./tests]
+  #   pass_filenames: false
+  #   always_run: true
+  #   additional_dependencies: [pytest]
+  #   stages: [pre-push]
