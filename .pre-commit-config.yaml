@@ -42,3 +42,9 @@ repos:
     args: [./src, --verbose, --fail-under=100, --ignore-module, --ignore-init-method]
     stages: [pre-commit, pre-push]
     always_run: true
+  - id: interrogate
+    name: interrogate-tests
+    pass_filenames: false
+    args: [./tests, --verbose, --fail-under=100, --ignore-module, --ignore-init-method]
+    stages: [pre-commit, pre-push]
+    always_run: true
