@@ -1,9 +1,20 @@
 default_language_version:
   python: python3.13.2
 fail_fast: True
+default_stages: [pre-push]
 repos:
 - repo: https://github.com/codespell-project/codespell
   rev: v2.4.1
   hooks:
   - id: codespell
+    args: [--skip=*.js, --skip=*.xml, --skip=*.html, --skip=*.css, --skip=*.svg]
     stages: [pre-commit, pre-push]
+    always_run: true
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  rev: v0.13.0
+  hooks:
+  - id: ruff-format
+    name: ruff-format-src
+    args: [./src]
+    stages: [pre-commit, pre-push]
+    always_run: true
