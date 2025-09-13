@@ -58,7 +58,8 @@ repos:
   rev: v1.5.0
   hooks:
   - id: detect-secrets
-    args: [--exclude-files=.*\\docs($|\\.*)]
+    args: [--exclude-files=.*\\docs($|\\.*)] # windows
+    args: [--exclude-files=.*/docs($|/.*)] # linux
     exclude: package.lock.json
     stages: [pre-commit, pre-push]
     always_run: true
@@ -71,3 +72,11 @@ repos:
     pass_filenames: false
     always_run: true
     stages: [pre-commit]
+  - id: build-docs
+    name: build-docs
+    entry: python build_docs.py
+    language: python
+    pass_filenames: false
+    always_run: true
+    stages: [pre-commit]
+    additional_dependencies: [GitPython]

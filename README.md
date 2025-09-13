@@ -14,3 +14,5 @@ Precommits common to projects
 
 5. Check working
 | uv run pre-commit run --all-files
+
+6. Should have docs already built (https://www.youtube.com/watch?v=BWIrhgCAae0)
