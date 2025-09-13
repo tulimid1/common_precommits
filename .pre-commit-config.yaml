@@ -1,5 +1,9 @@
+default_language_version:
+  python: python3.13.2
+fail_fast: True
 repos:
 - repo: https://github.com/codespell-project/codespell
   rev: v2.4.1
   hooks:
   - id: codespell
+    stages: [pre-commit, pre-push]
