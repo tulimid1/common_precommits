@@ -62,3 +62,12 @@ repos:
     exclude: package.lock.json
     stages: [pre-commit, pre-push]
     always_run: true
+- repo: local
+  hooks:
+  - id: update-docs
+    name: update-docs
+    entry: python update_docs.py
+    language: python
+    pass_filenames: false
+    always_run: true
+    stages: [pre-commit]
