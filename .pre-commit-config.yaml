@@ -23,3 +23,13 @@ repos:
     args: [./tests]
     stages: [pre-commit, pre-push]
     always_run: true
+  - id: ruff-check
+    name: ruff-check-src
+    args: [./src]
+    stages: [pre-commit, pre-push]
+    always_run: true
+  - id: ruff-check
+    name: ruff-check-tests
+    args: [./tests]
+    stages: [pre-commit, pre-push]
+    always_run: true
