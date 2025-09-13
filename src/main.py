@@ -1,4 +1,5 @@
 def main():
+    """print hello from project"""
     print("Hello from common-precommits!")
 
 

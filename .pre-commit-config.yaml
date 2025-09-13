@@ -33,3 +33,12 @@ repos:
     args: [./tests]
     stages: [pre-commit, pre-push]
     always_run: true
+- repo: https://github.com/econchick/interrogate
+  rev: 1.7.0  
+  hooks:
+  - id: interrogate
+    name: interrogate-src
+    pass_filenames: false
+    args: [./src, --verbose, --fail-under=100, --ignore-module, --ignore-init-method]
+    stages: [pre-commit, pre-push]
+    always_run: true
